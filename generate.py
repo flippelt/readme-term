@@ -163,20 +163,72 @@ def wrap_words(words: list[str], first: str, cont: str, width: int = 72) -> list
     return lines or [first.rstrip()]
 
 
-def wrap_install(names: list[str], width: int = 70) -> list[str]:
-    prefix = "$ brew install "
-    indent = " " * 15
+def wrap_install(
+    names: list[str],
+    prefix: str,
+    cont_char: str = "\\",
+    width: int = 70,
+) -> list[str]:
+    indent = " " * min(15, max(4, len(prefix)))
     lines: list[str] = []
     buf = prefix
     for name in names:
         piece = name if buf == prefix else " " + name
-        if len(buf) + len(piece) + 2 > width and buf != prefix:
-            lines.append(buf + " \\")
+        extra = 2 if cont_char else 0
+        if len(buf) + len(piece) + extra > width and buf != prefix:
+            lines.append(buf + ((" " + cont_char) if cont_char else ""))
             buf = indent + name
         else:
             buf += piece
     lines.append(buf)
     return lines
+
+
+INSTALLERS = {
+    "brew": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "brew install",
+        "cont_char": "\\",
+        "updating": " Updating Homebrew...",
+        "catalog": "JSON API formula.jws.json",
+        "fetch_prefix": " Fetching downloads for: ",
+        "pkg_label": lambda n, v: f"Bottle {n} ({v})",
+        "summary": lambda n: f"🍺  {n} installed",
+    },
+    "apt": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "sudo apt install",
+        "cont_char": "\\",
+        "updating": " Reading package lists...",
+        "catalog": "Get:1 InRelease [amd64]",
+        "fetch_prefix": " The following NEW packages will be installed: ",
+        "pkg_label": lambda n, v: f"Get: {n} ({v})",
+        "summary": lambda n: f"{n} newly installed, 0 to remove",
+    },
+    "winget": {
+        "shell": "powershell",
+        "whoami_cmd": "$env:USERNAME",
+        "install_cmd": "winget install",
+        "cont_char": "`",
+        "updating": " Searching sources...",
+        "catalog": "Source: winget",
+        "fetch_prefix": " Found: ",
+        "pkg_label": lambda n, v: f"{n} [{v}]",
+        "summary": lambda n: f"Successfully installed {n} packages",
+    },
+}
+
+
+def prompt_html(shell: str) -> str:
+    if shell == "powershell":
+        return '<tspan class="ps">PS&gt; </tspan>'
+    return '<tspan class="prompt">$ </tspan>'
+
+
+def prompt_plain(shell: str) -> str:
+    return "PS> " if shell == "powershell" else "$ "
 
 
 def duration_for(pkg: dict) -> float:
@@ -195,6 +247,7 @@ def css_base(cursor_at: float) -> list[str]:
     return [
         "    .term { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 14px; }",
         "    .prompt { fill: #3fb950; }",
+        "    .ps     { fill: #e5c07b; }",
         "    .cmd    { fill: #c9d1d9; }",
         "    .user   { fill: #58a6ff; }",
         "    .ok     { fill: #3fb950; }",
@@ -315,9 +368,20 @@ def build(cfg: dict, today: date | None = None) -> str:
     window = cfg.get("window", "you@github ~ /profile")
     whoami = cfg.get("whoami", "you")
     boot = cfg.get("boot") or {}
-    brew = cfg.get("brew") or {}
+    install_cfg = cfg.get("install") or cfg.get("brew") or {}
     profile = cfg.get("profile") or {}
-    packages_in = list(brew.get("packages") or [])
+    kind = str(install_cfg.get("kind") or ("brew" if install_cfg.get("packages") else "none")).lower()
+    if kind in {"none", "off", "false"}:
+        installer = None
+        packages_in = []
+    else:
+        if kind not in INSTALLERS:
+            raise SystemExit(f"unknown install.kind {kind!r} (brew, apt, winget, none)")
+        installer = INSTALLERS[kind]
+        packages_in = list(install_cfg.get("packages") or [])
+    shell = str(cfg.get("shell") or (installer or {}).get("shell") or "unix")
+    phtml = prompt_html(shell)
+    pplain = prompt_plain(shell)
 
     packages: list[dict] = []
     used_ids: set[str] = set()
@@ -340,7 +404,7 @@ def build(cfg: dict, today: date | None = None) -> str:
             "id": pid,
             "name": name,
             "version": version,
-            "label": f"Bottle {name} ({version})",
+            "label": (installer or INSTALLERS["brew"])["pkg_label"](name, version),
             "note": raw.get("note"),
             "ribbon": bool(raw.get("ribbon")),
             "effect": effect,
@@ -369,10 +433,15 @@ def build(cfg: dict, today: date | None = None) -> str:
         y += gap
 
     if whoami:
+        whoami_cmd = (installer or INSTALLERS["brew"])["whoami_cmd"]
+        if shell == "powershell":
+            whoami_cmd = cfg.get("whoami_cmd") or "$env:USERNAME"
+        else:
+            whoami_cmd = cfg.get("whoami_cmd") or "whoami"
         emit_text(
             "ln-whoami",
             t,
-            '<tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan>',
+            f'{phtml}<tspan class="cmd">{esc(whoami_cmd)}</tspan>',
         )
         t += 0.35
         emit_text(
@@ -385,11 +454,12 @@ def build(cfg: dict, today: date | None = None) -> str:
 
     steps = list(boot.get("steps") or [])
     if steps or boot.get("command") or boot.get("ready"):
-        cmd = boot.get("command", "./boot.sh")
+        default_boot = ".\\boot.ps1" if shell == "powershell" else "./boot.sh"
+        cmd = boot.get("command", default_boot)
         emit_text(
             "ln-boot",
             t,
-            f'<tspan class="prompt">$ </tspan><tspan class="cmd">{esc(cmd)}</tspan>',
+            f'{phtml}<tspan class="cmd">{esc(cmd)}</tspan>',
         )
         t += 0.30
         for i, step in enumerate(steps):
@@ -418,11 +488,13 @@ def build(cfg: dict, today: date | None = None) -> str:
     t_pkg = None
     if packages:
         names = [p["name"] for p in packages]
-        install_lines = wrap_install(names)
+        assert installer is not None
+        cmd_prefix = f"{pplain}{installer['install_cmd']} "
+        install_lines = wrap_install(names, cmd_prefix, installer["cont_char"])
         for i, line in enumerate(install_lines):
             if i == 0:
-                rest = line[2:] if line.startswith("$ ") else line
-                html = f'<tspan class="prompt">$ </tspan><tspan class="cmd">{esc(rest)}</tspan>'
+                rest = line[len(pplain) :]
+                html = f'{phtml}<tspan class="cmd">{esc(rest)}</tspan>'
             else:
                 html = f'<tspan class="cmd">{esc(line)}</tspan>'
             emit_text(f"ln-brew-{i}", t, html)
@@ -430,7 +502,7 @@ def build(cfg: dict, today: date | None = None) -> str:
         emit_text(
             "ln-upd",
             t,
-            '<tspan class="eq">==&gt;</tspan><tspan class="mid"> Updating Homebrew...</tspan>',
+            f'<tspan class="eq">==&gt;</tspan><tspan class="mid">{esc(installer["updating"])}</tspan>',
         )
         t += 0.20
 
@@ -450,7 +522,7 @@ def build(cfg: dict, today: date | None = None) -> str:
         body.append(spinner(json_id, y))
         body.append(check(json_id, y))
         body.append(
-            f'      <text x="{MSG_X}" y="{y}" class="cmd">JSON API formula.jws.json</text>'
+            f'      <text x="{MSG_X}" y="{y}" class="cmd">{esc(installer["catalog"])}</text>'
         )
         body.append(bar_group(json_row, bar_x, pct_x))
         body.append("    </g>")
@@ -460,7 +532,7 @@ def build(cfg: dict, today: date | None = None) -> str:
         fetch_words = [n + "," for n in names[:-1]] + names[-1:]
         fetch_lines = wrap_words(
             fetch_words,
-            "==> Fetching downloads for: ",
+            "==>" + installer["fetch_prefix"],
             "    ",
         )
         for i, line in enumerate(fetch_lines):
@@ -513,10 +585,10 @@ def build(cfg: dict, today: date | None = None) -> str:
         emit_text(
             "ln-sum",
             t,
-            f'<tspan class="beer">🍺  {len(packages)} installed</tspan>',
+            f'<tspan class="beer">{esc(installer["summary"](len(packages)))}</tspan>',
         )
         t += 0.20
-        keg = brew.get("keg_only")
+        keg = install_cfg.get("keg_only") or install_cfg.get("footnote")
         if keg:
             emit_text(
                 "ln-keg",
@@ -531,10 +603,16 @@ def build(cfg: dict, today: date | None = None) -> str:
         fname = profile.get("file", "profile.ts")
         ident = profile.get("ident", whoami or "me")
         ptype = profile.get("type", "Dev")
+        if profile.get("command"):
+            show = str(profile["command"])
+        elif shell == "powershell":
+            show = f"Get-Content {fname}"
+        else:
+            show = f"cat {fname}"
         emit_text(
             "ln-cat",
             t,
-            f'<tspan class="prompt">$ </tspan><tspan class="cmd">cat {esc(fname)}</tspan>',
+            f'{phtml}<tspan class="cmd">{esc(show)}</tspan>',
         )
         t += 0.30
         emit_text(
@@ -592,11 +670,15 @@ def build(cfg: dict, today: date | None = None) -> str:
     css.append("      .cursor { opacity: 1 !important; }")
     css.append("    }")
 
-    pkg_names = " ".join(p["name"] for p in packages) or "packages"
-    aria = (
-        f"Terminal: $ whoami → {whoami}; brew install {pkg_names}; "
-        f"then cat {profile.get('file', 'profile.ts')}"
-    )
+    pkg_names = " ".join(p["name"] for p in packages)
+    bits = [f"whoami → {whoami}"]
+    if boot:
+        bits.append(str(boot.get("command", "boot")))
+    if packages and installer:
+        bits.append(f"{installer['install_cmd']} {pkg_names}")
+    if fields:
+        bits.append(profile.get("file", "profile.ts"))
+    aria = "Terminal: " + "; ".join(bits)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}" role="img" aria-label="{esc(aria)}">
   <defs>
@@ -621,18 +703,45 @@ def build(cfg: dict, today: date | None = None) -> str:
 '''
 
 
-def main() -> None:
-    if not CONFIG.exists():
-        raise SystemExit(f"missing {CONFIG} — copy the example and edit it")
-    cfg = json.loads(CONFIG.read_text())
+def render(config_path: Path, out_path: Path) -> None:
+    cfg = json.loads(config_path.read_text())
     svg = build(cfg)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    previous = OUT.read_text() if OUT.exists() else ""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    previous = out_path.read_text() if out_path.exists() else ""
     if previous == svg:
-        print(f"unchanged {OUT}")
+        print(f"unchanged {out_path}")
         return
-    OUT.write_text(svg)
-    print(f"wrote {OUT} ({OUT.stat().st_size} bytes)")
+    out_path.write_text(svg)
+    print(f"wrote {out_path} ({out_path.stat().st_size} bytes)")
+
+
+def render_examples() -> None:
+    examples = ROOT / "examples"
+    if not examples.is_dir():
+        return
+    for path in sorted(examples.glob("*.json")):
+        render(path, ROOT / "assets" / f"{path.stem}.svg")
+
+
+def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Render a terminal SVG from config.json")
+    parser.add_argument("config", nargs="?", default=str(CONFIG))
+    parser.add_argument("out", nargs="?", default=None)
+    parser.add_argument(
+        "--examples",
+        action="store_true",
+        help="also render examples/*.json into assets/<name>.svg",
+    )
+    args = parser.parse_args()
+    config_path = Path(args.config)
+    if not config_path.exists():
+        raise SystemExit(f"missing {config_path} — copy an example from examples/ and edit it")
+    out_path = Path(args.out) if args.out else OUT
+    render(config_path, out_path)
+    if args.examples:
+        render_examples()
 
 
 if __name__ == "__main__":

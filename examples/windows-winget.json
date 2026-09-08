@@ -1,19 +1,20 @@
 {
-  "window": "you@github ~ /profile",
+  "window": "you@windows ~ /profile",
   "whoami": "your_handle",
+  "shell": "powershell",
   "boot": {
-    "command": "./boot.sh",
+    "command": ".\\boot.ps1",
     "ready": "welcome!",
     "steps": [
       { "key": "POST", "value": "passed" },
-      { "key": "mount /dev/you", "value": "ready" },
+      { "key": "mount C:\\Users\\you", "value": "ready" },
       { "key": "load stack", "value": "done" },
       { "key": "init tooling", "value": "online" }
     ]
   },
   "install": {
-    "kind": "brew",
-    "keg_only": "human is keg-only — macOS already shipped one",
+    "kind": "winget",
+    "keg_only": "Found existing package: human",
     "packages": [
       {
         "name": "language",

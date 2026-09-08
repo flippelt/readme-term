@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 868" width="860" height="868" role="img" aria-label="Terminal: $ whoami → your_handle; brew install language human curiosity side-quest thinking-outside-the-box; then cat you.ts">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 868" width="860" height="868" role="img" aria-label="Terminal: whoami → your_handle; ./boot.sh; brew install language human curiosity side-quest thinking-outside-the-box; you.ts">
   <defs>
     <style>
     .term { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 14px; }
     .prompt { fill: #3fb950; }
+    .ps     { fill: #e5c07b; }
     .cmd    { fill: #c9d1d9; }
     .user   { fill: #58a6ff; }
     .ok     { fill: #3fb950; }

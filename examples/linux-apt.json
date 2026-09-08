@@ -1,5 +1,5 @@
 {
-  "window": "you@github ~ /profile",
+  "window": "you@linux ~ /profile",
   "whoami": "your_handle",
   "boot": {
     "command": "./boot.sh",
@@ -12,8 +12,8 @@
     ]
   },
   "install": {
-    "kind": "brew",
-    "keg_only": "human is keg-only — macOS already shipped one",
+    "kind": "apt",
+    "keg_only": "human is already the newest version",
     "packages": [
       {
         "name": "language",

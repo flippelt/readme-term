@@ -11,7 +11,7 @@ The preview is generic on purpose (`your_handle`, `your city`, birthday `2000-01
 ## Setup
 
 1. Click **Use this template** and create a **public** repo.
-2. Edit [`config.json`](config.json) — at least `window`, `whoami`, brew `packages`, and `profile`.
+2. Edit [`config.json`](config.json) — at least `window`, `whoami`, `profile`, and (if you want a package manager) `install`.
 3. For a living `human` version, set `brew.packages[].version.birthday` to a real `YYYY-MM-DD`.
 4. Enable the daily Action (see **Cron** below) or run locally:
 
@@ -30,6 +30,41 @@ Python **3.10+**. No packages to install.
 ```
 
 If `readme-term` *is* the profile repo, use `src="assets/boot.svg"`.
+
+## Variants
+
+`config.json` is macOS + Homebrew + boot. Copy another file on top of it if you want a different shell:
+
+```
+cp examples/no-install.json config.json
+python3 generate.py
+```
+
+| File | What you get |
+| --- | --- |
+| [`config.json`](config.json) | `$ brew install` + `./boot.sh` (default) |
+| [`examples/no-install.json`](examples/no-install.json) | no package manager — boot then `cat` |
+| [`examples/no-boot.json`](examples/no-boot.json) | brew, no `./boot.sh` |
+| [`examples/linux-apt.json`](examples/linux-apt.json) | `$ sudo apt install` |
+| [`examples/windows-winget.json`](examples/windows-winget.json) | `PS> winget install` + `Get-Content` |
+
+<p align="center">
+  <img src="assets/no-install.svg" alt="No package manager" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/no-boot.svg" alt="No boot.sh" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/linux-apt.svg" alt="Linux apt terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/windows-winget.svg" alt="PowerShell winget terminal" width="720"/>
+</p>
+
+`install.kind` can be `brew`, `apt`, `winget`, or `none`. Omit the `boot` object to skip `./boot.sh`. Set `"shell": "powershell"` for `PS>` and `$env:USERNAME`.
 
 ## Cron (GitHub Actions)
 
@@ -74,8 +109,10 @@ Delete `.github/workflows/generate.yml` and generate only on your machine with `
 | `window` | Title in the traffic-light bar (`you@github ~ /profile`) |
 | `whoami` | Output of `$ whoami` |
 | `boot` | `./boot.sh` steps (`key` / `value`) and the gold `ready` line |
-| `brew.packages` | Formulae: `name`, `version`, optional `note` |
-| `brew.keg_only` | Grey line under the beer summary (omit the key to hide it) |
+| `install.kind` | `brew`, `apt`, `winget`, or `none` |
+| `install.packages` | Formulae: `name`, `version`, optional `note` |
+| `install.keg_only` | Grey footnote under the summary (omit the key to hide it) |
+| `shell` | `unix` (default) or `powershell` |
 | `profile` | The `cat you.ts` object |
 
 ### Package extras
@@ -89,7 +126,7 @@ Delete `.github/workflows/generate.yml` and generate only on your machine with `
 
 `ribbon: true` draws a small orange awareness bow instead of a text note.
 
-Omit `boot`, `brew`, or `profile` if you do not want that act.
+Omit `boot`, `install`, or `profile` if you do not want that act. (`brew` still works as an alias of `install`.)
 
 ## License
 

@@ -1,0 +1,27 @@
+{
+  "window": "you@github ~ /profile",
+  "whoami": "your_handle",
+  "boot": {
+    "command": "./boot.sh",
+    "ready": "welcome!",
+    "steps": [
+      { "key": "POST", "value": "passed" },
+      { "key": "mount /dev/you", "value": "ready" },
+      { "key": "load stack", "value": "done" },
+      { "key": "init tooling", "value": "online" }
+    ]
+  },
+  "profile": {
+    "file": "you.ts",
+    "ident": "your_handle",
+    "type": "Dev",
+    "fields": [
+      { "key": "pronouns", "value": "they/them" },
+      { "key": "role", "value": "your role" },
+      { "key": "location", "value": "your city" },
+      { "key": "code", "value": ["TypeScript", "Python"] },
+      { "key": "focus", "value": "what you like to build" },
+      { "key": "learning", "value": "what you are learning" }
+    ]
+  }
+}

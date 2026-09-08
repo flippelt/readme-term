@@ -18,13 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Render assets/boot.svg
-        run: python3 generate.py
+        run: python3 generate.py --examples
       - name: Commit if it changed
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/boot.svg
+          git add assets/*.svg
           if git diff --staged --quiet; then
             echo "boot.svg unchanged"
             exit 0

@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 708" width="860" height="708" role="img" aria-label="Terminal: whoami → your_handle; brew install language human curiosity side-quest thinking-outside-the-box; you.ts">
+  <defs>
+    <style>
+    .term { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 14px; }
+    .prompt { fill: #3fb950; }
+    .ps     { fill: #e5c07b; }
+    .cmd    { fill: #c9d1d9; }
+    .user   { fill: #58a6ff; }
+    .ok     { fill: #3fb950; }
+    .mid    { fill: #8b949e; }
+    .val    { fill: #58a6ff; }
+    .ready  { fill: #f0b429; }
+    .kw     { fill: #ff7b72; }
+    .var    { fill: #c9d1d9; }
+    .type   { fill: #ffa657; }
+    .key    { fill: #79c0ff; }
+    .str    { fill: #a5d6ff; }
+    .punc   { fill: #8b949e; }
+    .eq     { fill: #3fb950; }
+    .track  { fill: #484f58; }
+    .hash   { fill: #3fb950; }
+    .pct    { fill: #8b949e; }
+    .pct-end{ fill: #3fb950; }
+    .note   { fill: #6e7681; }
+    .beer   { fill: #c9d1d9; }
+    .spin-g { opacity: 0; }
+    .check  { opacity: 1; }
+    .bar    { opacity: 0; }
+    .ln     { opacity: 1; }
+    .sf     { fill: #58a6ff; opacity: 0; }
+    .s0 { animation: sp0 .48s steps(1) infinite; }
+    .s1 { animation: sp1 .48s steps(1) infinite; }
+    .s2 { animation: sp2 .48s steps(1) infinite; }
+    .s3 { animation: sp3 .48s steps(1) infinite; }
+    @keyframes appear { from { opacity: 0 } to { opacity: 1 } }
+    @keyframes vanish { to { opacity: 0 } }
+    @keyframes blink  { 50% { opacity: 0 } }
+    @keyframes sp0 { 0%,24% { opacity: 1 } 25%,100% { opacity: 0 } }
+    @keyframes sp1 { 0%,24% { opacity: 0 } 25%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
+    @keyframes sp2 { 0%,49% { opacity: 0 } 50%,74% { opacity: 1 } 75%,100% { opacity: 0 } }
+    @keyframes sp3 { 0%,74% { opacity: 0 } 75%,100% { opacity: 1 } }
+    .cursor { fill: #c9d1d9; opacity: 1; animation: appear .1s linear 9.45s both, blink 1.05s step-end 9.55s infinite; }
+
+    .ln-whoami { animation: appear .15s ease 0.15s both; }
+    .ln-user { animation: appear .15s ease 0.50s both; }
+    .ln-brew-0 { animation: appear .15s ease 1.00s both; }
+    .ln-brew-1 { animation: appear .15s ease 1.15s both; }
+    .ln-upd { animation: appear .15s ease 1.30s both; }
+    .ln-json { animation: appear .15s ease 1.50s both; }
+    .spin-json { animation: appear .15s ease 1.50s both; }
+    .ln-fetch-0 { animation: appear .15s ease 2.15s both; }
+    .ln-fetch-1 { animation: appear .15s ease 2.25s both; }
+    .ln-language { animation: appear .15s ease 2.45s both; }
+    .ln-human { animation: appear .15s ease 2.45s both; }
+    .ln-curiosity { animation: appear .15s ease 2.45s both; }
+    .ln-side-quest { animation: appear .15s ease 2.45s both; }
+    .ln-thinking-outside-the-box { animation: appear .15s ease 2.45s both; }
+    .ln-sum { animation: appear .15s ease 6.50s both; }
+    .ln-keg { animation: appear .15s ease 6.70s both; }
+    .ln-cat { animation: appear .15s ease 7.10s both; }
+    .ln-const { animation: appear .15s ease 7.40s both; }
+    .ln-f0 { animation: appear .15s ease 7.65s both; }
+    .ln-f1 { animation: appear .15s ease 7.90s both; }
+    .ln-f2 { animation: appear .15s ease 8.15s both; }
+    .ln-f3 { animation: appear .15s ease 8.40s both; }
+    .ln-f4 { animation: appear .15s ease 8.65s both; }
+    .ln-f5 { animation: appear .15s ease 8.90s both; }
+    .ln-end { animation: appear .15s ease 9.15s both; }
+    .spin-json { animation: appear 0s linear 1.50s both, vanish 0s linear 2.00s forwards; }
+    .check-json { animation: appear .18s ease 2.00s both; }
+    .bar-json { animation: appear 0s linear 1.50s both, vanish .18s ease 2.00s forwards; }
+    .spin-language { animation: appear 0s linear 2.45s both, vanish 0s linear 3.70s forwards; }
+    .check-language { animation: appear .18s ease 3.70s both; }
+    .bar-language { animation: appear 0s linear 2.45s both, vanish .18s ease 3.70s forwards; }
+    .note-language { animation: appear .25s ease 3.75s both; }
+    .spin-human { animation: appear 0s linear 2.45s both, vanish 0s linear 6.25s forwards; }
+    .check-human { animation: appear .18s ease 6.25s both; }
+    .bar-human { animation: appear 0s linear 2.45s both, vanish .18s ease 6.25s forwards; }
+    .note-human { animation: appear .25s ease 6.30s both; }
+    .spin-curiosity { animation: appear 0s linear 2.45s both, vanish 0s linear 3.30s forwards; }
+    .check-curiosity { animation: appear .18s ease 3.30s both; }
+    .bar-curiosity { animation: appear 0s linear 2.45s both, vanish .18s ease 3.30s forwards; }
+    .note-curiosity { animation: appear .25s ease 3.35s both; }
+    .spin-side-quest { animation: appear 0s linear 2.45s both, vanish 0s linear 3.70s forwards; }
+    .check-side-quest { animation: appear .18s ease 3.70s both; }
+    .bar-side-quest { animation: appear 0s linear 2.45s both, vanish .18s ease 3.70s forwards; }
+    .note-side-quest { animation: appear .25s ease 3.75s both; }
+    .spin-thinking-outside-the-box { animation: appear 0s linear 2.45s both, vanish 0s linear 4.45s forwards; }
+    .check-thinking-outside-the-box { animation: appear .18s ease 4.45s both; }
+    .bar-thinking-outside-the-box { animation: appear 0s linear 2.45s both, vanish .18s ease 4.45s forwards; }
+    .note-thinking-outside-the-box { animation: appear .25s ease 4.50s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ln, .spin-g, .check, .bar, .note, .cursor, .sf, .h, .pstep { animation: none !important; }
+      .spin-g, .bar { opacity: 0 !important; }
+      .check, .ln, .note { opacity: 1 !important; }
+      .cursor { opacity: 1 !important; }
+    }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="858" height="706" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="1" y1="40" x2="859" y2="40" stroke="#30363d" stroke-width="1"/>
+  <circle cx="24" cy="20.5" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="20.5" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="20.5" r="6" fill="#27c93f"/>
+  <text x="430" y="25" text-anchor="middle" class="term" fill="#6e7681" font-size="13">you@github ~ /profile</text>
+
+  <g class="term" xml:space="preserve">
+    <text x="24" y="72" class="ln ln-whoami"><tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan></text>
+    <text x="24" y="96" class="ln ln-user"><tspan class="user">your_handle</tspan></text>
+    <text x="24" y="144" class="ln ln-brew-0"><tspan class="prompt">$ </tspan><tspan class="cmd">brew install language human curiosity side-quest \</tspan></text>
+    <text x="24" y="168" class="ln ln-brew-1"><tspan class="cmd">               thinking-outside-the-box</tspan></text>
+    <text x="24" y="192" class="ln ln-upd"><tspan class="eq">==&gt;</tspan><tspan class="mid"> Updating Homebrew...</tspan></text>
+    <g class="ln ln-json">
+      <g class="spin-g spin-json">
+        <text x="26" y="216" class="term sf s0">⠋</text>
+        <text x="26" y="216" class="term sf s1">⠙</text>
+        <text x="26" y="216" class="term sf s2">⠹</text>
+        <text x="26" y="216" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-json" transform="translate(24 205)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="216" class="cmd">JSON API formula.jws.json</text>
+      <g class="bar bar-json">
+        <text x="391" y="216" class="term track">----------------</text>
+        <text x="391" y="216" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 1.53s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.56s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.59s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.62s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.66s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.69s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.72s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.75s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.78s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.81s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.84s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.87s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.91s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.94s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 1.97s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.00s both">#</tspan></text>
+        <text x="537" y="216" class="term pct pstep" style="opacity:0;animation:appear 0s linear 1.54s both, vanish 0s linear 1.63s forwards">  8%</text>
+        <text x="537" y="216" class="term pct pstep" style="opacity:0;animation:appear 0s linear 1.63s both, vanish 0s linear 1.74s forwards"> 27%</text>
+        <text x="537" y="216" class="term pct pstep" style="opacity:0;animation:appear 0s linear 1.74s both, vanish 0s linear 1.86s forwards"> 49%</text>
+        <text x="537" y="216" class="term pct pstep" style="opacity:0;animation:appear 0s linear 1.86s both, vanish 0s linear 1.95s forwards"> 73%</text>
+        <text x="537" y="216" class="term pct pstep" style="opacity:0;animation:appear 0s linear 1.95s both, vanish 0s linear 2.00s forwards"> 91%</text>
+        <text x="537" y="216" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 2.00s both">100%</text>
+      </g>
+    </g>
+    <text x="24" y="238" class="ln ln-fetch-0"><tspan class="eq">==&gt;</tspan><tspan class="mid"> Fetching downloads for: language, human, curiosity, side-quest,</tspan></text>
+    <text x="24" y="260" class="ln ln-fetch-1"><tspan class="mid">    thinking-outside-the-box</tspan></text>
+    <g class="ln ln-language">
+      <g class="spin-g spin-language">
+        <text x="26" y="284" class="term sf s0">⠋</text>
+        <text x="26" y="284" class="term sf s1">⠙</text>
+        <text x="26" y="284" class="term sf s2">⠹</text>
+        <text x="26" y="284" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-language" transform="translate(24 273)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="284" class="cmd">Bottle language (1.0.0)</text>
+      <g class="bar bar-language">
+        <text x="391" y="284" class="term track">----------------</text>
+        <text x="391" y="284" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 2.53s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.61s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.68s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.76s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.84s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.92s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.00s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.08s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.15s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.23s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.31s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.39s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.47s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.54s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.62s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.70s both">#</tspan></text>
+        <text x="537" y="284" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.55s both, vanish 0s linear 2.79s forwards">  8%</text>
+        <text x="537" y="284" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.79s both, vanish 0s linear 3.06s forwards"> 27%</text>
+        <text x="537" y="284" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.06s both, vanish 0s linear 3.36s forwards"> 49%</text>
+        <text x="537" y="284" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.36s both, vanish 0s linear 3.59s forwards"> 73%</text>
+        <text x="537" y="284" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.59s both, vanish 0s linear 3.70s forwards"> 91%</text>
+        <text x="537" y="284" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 3.70s both">100%</text>
+      </g>
+      <text x="391" y="284" class="term note note-language"># pick yours</text>
+    </g>
+    <g class="ln ln-human">
+      <g class="spin-g spin-human">
+        <text x="26" y="306" class="term sf s0">⠋</text>
+        <text x="26" y="306" class="term sf s1">⠙</text>
+        <text x="26" y="306" class="term sf s2">⠹</text>
+        <text x="26" y="306" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-human" transform="translate(24 295)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="306" class="cmd">Bottle human (2.6.8)</text>
+      <g class="bar bar-human">
+        <text x="391" y="306" class="term track">----------------</text>
+        <text x="391" y="306" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 2.56s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.68s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.79s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.91s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.02s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.13s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.25s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.36s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.48s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.59s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.70s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.82s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.93s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.05s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 6.10s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 6.25s both">#</tspan></text>
+        <text x="537" y="306" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.57s both, vanish 0s linear 3.01s forwards">  8%</text>
+        <text x="537" y="306" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.01s both, vanish 0s linear 3.49s forwards"> 31%</text>
+        <text x="537" y="306" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.49s both, vanish 0s linear 4.05s forwards"> 58%</text>
+        <text x="537" y="306" class="term pct pstep" style="opacity:0;animation:appear 0s linear 4.05s both, vanish 0s linear 5.95s forwards"> 87%</text>
+        <text x="537" y="306" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 5.95s both">100%</text>
+      </g>
+      <text x="391" y="306" class="term note note-human"># finally stable</text>
+    </g>
+    <g class="ln ln-curiosity">
+      <g class="spin-g spin-curiosity">
+        <text x="26" y="328" class="term sf s0">⠋</text>
+        <text x="26" y="328" class="term sf s1">⠙</text>
+        <text x="26" y="328" class="term sf s2">⠹</text>
+        <text x="26" y="328" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-curiosity" transform="translate(24 317)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="328" class="cmd">Bottle curiosity (0.1.0)</text>
+      <g class="bar bar-curiosity">
+        <text x="391" y="328" class="term track">----------------</text>
+        <text x="391" y="328" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 2.48s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.51s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.54s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.56s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.77s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.79s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.81s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.83s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.86s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.04s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.06s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.09s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.20s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.23s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.27s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.30s both">#</tspan></text>
+        <text x="537" y="328" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.56s both, vanish 0s linear 2.77s forwards"> 25%</text>
+        <text x="537" y="328" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.77s both, vanish 0s linear 3.04s forwards"> 56%</text>
+        <text x="537" y="328" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.04s both, vanish 0s linear 3.20s forwards"> 75%</text>
+        <text x="537" y="328" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 3.20s both">100%</text>
+      </g>
+      <text x="391" y="328" class="term note note-curiosity">--unbounded</text>
+    </g>
+    <g class="ln ln-side-quest">
+      <g class="spin-g spin-side-quest">
+        <text x="26" y="350" class="term sf s0">⠋</text>
+        <text x="26" y="350" class="term sf s1">⠙</text>
+        <text x="26" y="350" class="term sf s2">⠹</text>
+        <text x="26" y="350" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-side-quest" transform="translate(24 339)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="350" class="cmd">Bottle side-quest (0.1.0)</text>
+      <g class="bar bar-side-quest">
+        <text x="391" y="350" class="term track">----------------</text>
+        <text x="391" y="350" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 2.53s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.61s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.68s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.76s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.84s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.92s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.00s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.08s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.15s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.23s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.31s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.39s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.47s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.54s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.62s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.70s both">#</tspan></text>
+        <text x="537" y="350" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.55s both, vanish 0s linear 2.79s forwards">  8%</text>
+        <text x="537" y="350" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.79s both, vanish 0s linear 3.06s forwards"> 27%</text>
+        <text x="537" y="350" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.06s both, vanish 0s linear 3.36s forwards"> 49%</text>
+        <text x="537" y="350" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.36s both, vanish 0s linear 3.59s forwards"> 73%</text>
+        <text x="537" y="350" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.59s both, vanish 0s linear 3.70s forwards"> 91%</text>
+        <text x="537" y="350" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 3.70s both">100%</text>
+      </g>
+      <text x="391" y="350" class="term note note-side-quest"># optional</text>
+    </g>
+    <g class="ln ln-thinking-outside-the-box">
+      <g class="spin-g spin-thinking-outside-the-box">
+        <text x="26" y="372" class="term sf s0">⠋</text>
+        <text x="26" y="372" class="term sf s1">⠙</text>
+        <text x="26" y="372" class="term sf s2">⠹</text>
+        <text x="26" y="372" class="term sf s3">⠸</text>
+      </g>
+      <g class="check check-thinking-outside-the-box" transform="translate(24 361)">
+        <circle cx="7" cy="7" r="7" fill="#3fb950"/>
+        <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="48" y="372" class="cmd">Bottle thinking-outside-the-box (0.1.0)</text>
+      <g class="bar bar-thinking-outside-the-box">
+        <text x="391" y="372" class="term track">----------------</text>
+        <text x="391" y="372" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 4.45s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.33s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.20s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.08s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.95s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.83s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.70s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.58s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.45s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.33s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.20s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 3.08s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.95s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.83s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.70s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 2.58s both">#</tspan></text>
+        <text x="537" y="372" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.61s both, vanish 0s linear 2.99s forwards">  8%</text>
+        <text x="537" y="372" class="term pct pstep" style="opacity:0;animation:appear 0s linear 2.99s both, vanish 0s linear 3.43s forwards"> 27%</text>
+        <text x="537" y="372" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.43s both, vanish 0s linear 3.91s forwards"> 49%</text>
+        <text x="537" y="372" class="term pct pstep" style="opacity:0;animation:appear 0s linear 3.91s both, vanish 0s linear 4.27s forwards"> 73%</text>
+        <text x="537" y="372" class="term pct pstep" style="opacity:0;animation:appear 0s linear 4.27s both, vanish 0s linear 4.45s forwards"> 91%</text>
+        <text x="537" y="372" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 4.45s both">100%</text>
+      </g>
+      <text x="391" y="372" class="term note note-thinking-outside-the-box"># poured sideways</text>
+    </g>
+    <text x="24" y="402" class="ln ln-sum"><tspan class="beer">🍺  5 installed</tspan></text>
+    <text x="24" y="426" class="ln ln-keg"><tspan class="mid">    human is keg-only — macOS already shipped one</tspan></text>
+    <text x="24" y="466" class="ln ln-cat"><tspan class="prompt">$ </tspan><tspan class="cmd">cat you.ts</tspan></text>
+    <text x="24" y="490" class="ln ln-const"><tspan class="kw">const </tspan><tspan class="var">your_handle</tspan><tspan class="punc">: </tspan><tspan class="type">Dev</tspan><tspan class="punc"> = {</tspan></text>
+    <text x="24" y="514" class="ln ln-f0"><tspan class="key">&#160;&#160;pronouns</tspan><tspan class="punc">: </tspan><tspan class="str">"they/them"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="538" class="ln ln-f1"><tspan class="key">&#160;&#160;role</tspan><tspan class="punc">: </tspan><tspan class="str">"your role"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="562" class="ln ln-f2"><tspan class="key">&#160;&#160;location</tspan><tspan class="punc">: </tspan><tspan class="str">"your city"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="586" class="ln ln-f3"><tspan class="key">&#160;&#160;code</tspan><tspan class="punc">: [</tspan><tspan class="str">"TypeScript", "Python"</tspan><tspan class="punc">],</tspan></text>
+    <text x="24" y="610" class="ln ln-f4"><tspan class="key">&#160;&#160;focus</tspan><tspan class="punc">: </tspan><tspan class="str">"what you like to build"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="634" class="ln ln-f5"><tspan class="key">&#160;&#160;learning</tspan><tspan class="punc">: </tspan><tspan class="str">"what you are learning"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="658" class="ln ln-end"><tspan class="punc">};</tspan></text>
+  </g>
+
+  <rect class="cursor" x="24" y="690" width="9" height="4"/>
+</svg>
