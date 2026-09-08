@@ -1,13 +1,13 @@
 {
-  "window": "alex@github ~ /profile",
-  "whoami": "alex",
+  "window": "you@github ~ /profile",
+  "whoami": "your_handle",
   "boot": {
     "command": "./boot.sh",
     "ready": "welcome!",
     "steps": [
       { "key": "POST", "value": "passed" },
-      { "key": "mount /dev/alex", "value": "ready" },
-      { "key": "load stack: typescript rust", "value": "done" },
+      { "key": "mount /dev/you", "value": "ready" },
+      { "key": "load stack", "value": "done" },
       { "key": "init tooling", "value": "online" }
     ]
   },
@@ -15,27 +15,27 @@
     "keg_only": "human is keg-only — macOS already shipped one",
     "packages": [
       {
-        "name": "rust",
-        "version": "1.89.0",
-        "note": "# blazingly incremental"
+        "name": "language",
+        "version": "1.0.0",
+        "note": "# pick yours"
       },
       {
         "name": "human",
-        "version": { "type": "age", "birthday": "1999-04-20" },
+        "version": { "type": "age", "birthday": "2000-01-01" },
         "note": "# finally stable",
         "effect": "stall",
         "stall_at": 87
       },
       {
         "name": "curiosity",
-        "version": "0.9.0",
+        "version": "0.1.0",
         "note": "--unbounded",
         "effect": "bursts"
       },
       {
         "name": "side-quest",
-        "version": "1.0.0",
-        "note": "# main campaign"
+        "version": "0.1.0",
+        "note": "# optional"
       },
       {
         "name": "thinking-outside-the-box",
@@ -46,16 +46,16 @@
     ]
   },
   "profile": {
-    "file": "alex.ts",
-    "ident": "alex",
+    "file": "you.ts",
+    "ident": "your_handle",
     "type": "Dev",
     "fields": [
       { "key": "pronouns", "value": "they/them" },
-      { "key": "role", "value": "developer" },
-      { "key": "location", "value": "the internet" },
-      { "key": "code", "value": ["TypeScript", "Rust", "Python"] },
-      { "key": "focus", "value": "building things that make you grin" },
-      { "key": "learning", "value": "whatever the next rabbit hole is" }
+      { "key": "role", "value": "your role" },
+      { "key": "location", "value": "your city" },
+      { "key": "code", "value": ["TypeScript", "Python"] },
+      { "key": "focus", "value": "what you like to build" },
+      { "key": "learning", "value": "what you are learning" }
     ]
   }
 }
