@@ -1,16 +1,6 @@
 {
   "window": "you@github ~ /profile",
   "whoami": "your_handle",
-  "boot": {
-    "command": "./boot.sh",
-    "ready": "welcome!",
-    "steps": [
-      { "key": "POST", "value": "passed" },
-      { "key": "mount /dev/you", "value": "ready" },
-      { "key": "load stack", "value": "done" },
-      { "key": "init tooling", "value": "online" }
-    ]
-  },
   "install": {
     "kind": "brew",
     "keg_only": "human is keg-only — macOS already shipped one",

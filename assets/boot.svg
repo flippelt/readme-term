@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 868" width="860" height="868" role="img" aria-label="Terminal: $ whoami → alex; brew install rust human curiosity side-quest thinking-outside-the-box; then cat alex.ts">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 868" width="860" height="868" role="img" aria-label="Terminal: whoami → your_handle; ./boot.sh; brew install language human curiosity side-quest thinking-outside-the-box; you.ts">
   <defs>
     <style>
     .term { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 14px; }
     .prompt { fill: #3fb950; }
+    .ps     { fill: #e5c07b; }
     .cmd    { fill: #c9d1d9; }
     .user   { fill: #58a6ff; }
     .ok     { fill: #3fb950; }
@@ -55,7 +56,7 @@
     .spin-json { animation: appear .15s ease 3.40s both; }
     .ln-fetch-0 { animation: appear .15s ease 4.05s both; }
     .ln-fetch-1 { animation: appear .15s ease 4.15s both; }
-    .ln-rust { animation: appear .15s ease 4.35s both; }
+    .ln-language { animation: appear .15s ease 4.35s both; }
     .ln-human { animation: appear .15s ease 4.35s both; }
     .ln-curiosity { animation: appear .15s ease 4.35s both; }
     .ln-side-quest { animation: appear .15s ease 4.35s both; }
@@ -74,10 +75,10 @@
     .spin-json { animation: appear 0s linear 3.40s both, vanish 0s linear 3.90s forwards; }
     .check-json { animation: appear .18s ease 3.90s both; }
     .bar-json { animation: appear 0s linear 3.40s both, vanish .18s ease 3.90s forwards; }
-    .spin-rust { animation: appear 0s linear 4.35s both, vanish 0s linear 5.60s forwards; }
-    .check-rust { animation: appear .18s ease 5.60s both; }
-    .bar-rust { animation: appear 0s linear 4.35s both, vanish .18s ease 5.60s forwards; }
-    .note-rust { animation: appear .25s ease 5.65s both; }
+    .spin-language { animation: appear 0s linear 4.35s both, vanish 0s linear 5.60s forwards; }
+    .check-language { animation: appear .18s ease 5.60s both; }
+    .bar-language { animation: appear 0s linear 4.35s both, vanish .18s ease 5.60s forwards; }
+    .note-language { animation: appear .25s ease 5.65s both; }
     .spin-human { animation: appear 0s linear 4.35s both, vanish 0s linear 8.15s forwards; }
     .check-human { animation: appear .18s ease 8.15s both; }
     .bar-human { animation: appear 0s linear 4.35s both, vanish .18s ease 8.15s forwards; }
@@ -109,18 +110,18 @@
   <circle cx="24" cy="20.5" r="6" fill="#ff5f56"/>
   <circle cx="44" cy="20.5" r="6" fill="#ffbd2e"/>
   <circle cx="64" cy="20.5" r="6" fill="#27c93f"/>
-  <text x="430" y="25" text-anchor="middle" class="term" fill="#6e7681" font-size="13">alex@github ~ /profile</text>
+  <text x="430" y="25" text-anchor="middle" class="term" fill="#6e7681" font-size="13">you@github ~ /profile</text>
 
   <g class="term" xml:space="preserve">
     <text x="24" y="72" class="ln ln-whoami"><tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan></text>
-    <text x="24" y="96" class="ln ln-user"><tspan class="user">alex</tspan></text>
+    <text x="24" y="96" class="ln ln-user"><tspan class="user">your_handle</tspan></text>
     <text x="24" y="144" class="ln ln-boot"><tspan class="prompt">$ </tspan><tspan class="cmd">./boot.sh</tspan></text>
     <text x="24" y="168" class="ln ln-boot-0"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  POST ............................... </tspan><tspan class="val">passed</tspan></text>
-    <text x="24" y="192" class="ln ln-boot-1"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  mount /dev/alex .................... </tspan><tspan class="val">ready</tspan></text>
-    <text x="24" y="216" class="ln ln-boot-2"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  load stack: typescript rust ........ </tspan><tspan class="val">done</tspan></text>
+    <text x="24" y="192" class="ln ln-boot-1"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  mount /dev/you ..................... </tspan><tspan class="val">ready</tspan></text>
+    <text x="24" y="216" class="ln ln-boot-2"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  load stack ......................... </tspan><tspan class="val">done</tspan></text>
     <text x="24" y="240" class="ln ln-boot-3"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  init tooling ....................... </tspan><tspan class="val">online</tspan></text>
     <text x="24" y="264" class="ln ln-ready"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  system ready ▸ </tspan><tspan class="ready">welcome!</tspan></text>
-    <text x="24" y="304" class="ln ln-brew-0"><tspan class="prompt">$ </tspan><tspan class="cmd">brew install rust human curiosity side-quest \</tspan></text>
+    <text x="24" y="304" class="ln ln-brew-0"><tspan class="prompt">$ </tspan><tspan class="cmd">brew install language human curiosity side-quest \</tspan></text>
     <text x="24" y="328" class="ln ln-brew-1"><tspan class="cmd">               thinking-outside-the-box</tspan></text>
     <text x="24" y="352" class="ln ln-upd"><tspan class="eq">==&gt;</tspan><tspan class="mid"> Updating Homebrew...</tspan></text>
     <g class="ln ln-json">
@@ -146,21 +147,21 @@
         <text x="537" y="376" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 3.90s both">100%</text>
       </g>
     </g>
-    <text x="24" y="398" class="ln ln-fetch-0"><tspan class="eq">==&gt;</tspan><tspan class="mid"> Fetching downloads for: rust, human, curiosity, side-quest,</tspan></text>
+    <text x="24" y="398" class="ln ln-fetch-0"><tspan class="eq">==&gt;</tspan><tspan class="mid"> Fetching downloads for: language, human, curiosity, side-quest,</tspan></text>
     <text x="24" y="420" class="ln ln-fetch-1"><tspan class="mid">    thinking-outside-the-box</tspan></text>
-    <g class="ln ln-rust">
-      <g class="spin-g spin-rust">
+    <g class="ln ln-language">
+      <g class="spin-g spin-language">
         <text x="26" y="444" class="term sf s0">⠋</text>
         <text x="26" y="444" class="term sf s1">⠙</text>
         <text x="26" y="444" class="term sf s2">⠹</text>
         <text x="26" y="444" class="term sf s3">⠸</text>
       </g>
-      <g class="check check-rust" transform="translate(24 433)">
+      <g class="check check-language" transform="translate(24 433)">
         <circle cx="7" cy="7" r="7" fill="#3fb950"/>
         <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
-      <text x="48" y="444" class="cmd">Bottle rust (1.89.0)</text>
-      <g class="bar bar-rust">
+      <text x="48" y="444" class="cmd">Bottle language (1.0.0)</text>
+      <g class="bar bar-language">
         <text x="391" y="444" class="term track">----------------</text>
         <text x="391" y="444" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 4.43s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.51s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.58s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.66s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.74s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.82s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.90s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.97s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.05s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.13s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.21s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.29s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.37s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.44s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.52s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.60s both">#</tspan></text>
         <text x="537" y="444" class="term pct pstep" style="opacity:0;animation:appear 0s linear 4.45s both, vanish 0s linear 4.69s forwards">  8%</text>
@@ -170,7 +171,7 @@
         <text x="537" y="444" class="term pct pstep" style="opacity:0;animation:appear 0s linear 5.49s both, vanish 0s linear 5.60s forwards"> 91%</text>
         <text x="537" y="444" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 5.60s both">100%</text>
       </g>
-      <text x="391" y="444" class="term note note-rust"># blazingly incremental</text>
+      <text x="391" y="444" class="term note note-language"># pick yours</text>
     </g>
     <g class="ln ln-human">
       <g class="spin-g spin-human">
@@ -183,7 +184,7 @@
         <circle cx="7" cy="7" r="7" fill="#3fb950"/>
         <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
-      <text x="48" y="466" class="cmd">Bottle human (2.7.4)</text>
+      <text x="48" y="466" class="cmd">Bottle human (2.6.8)</text>
       <g class="bar bar-human">
         <text x="391" y="466" class="term track">----------------</text>
         <text x="391" y="466" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 4.46s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.58s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.69s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.81s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.92s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.03s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.15s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.26s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.38s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.49s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.60s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.72s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.83s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.95s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 8.00s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 8.15s both">#</tspan></text>
@@ -206,7 +207,7 @@
         <circle cx="7" cy="7" r="7" fill="#3fb950"/>
         <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
-      <text x="48" y="488" class="cmd">Bottle curiosity (0.9.0)</text>
+      <text x="48" y="488" class="cmd">Bottle curiosity (0.1.0)</text>
       <g class="bar bar-curiosity">
         <text x="391" y="488" class="term track">----------------</text>
         <text x="391" y="488" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 4.38s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.41s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.43s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.46s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.67s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.69s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.71s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.73s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.76s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.94s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.96s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.99s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.10s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.13s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.17s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.20s both">#</tspan></text>
@@ -228,7 +229,7 @@
         <circle cx="7" cy="7" r="7" fill="#3fb950"/>
         <path d="M3.8 7.2 6 9.4 11.2 4.2" fill="none" stroke="#0d1117" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
-      <text x="48" y="510" class="cmd">Bottle side-quest (1.0.0)</text>
+      <text x="48" y="510" class="cmd">Bottle side-quest (0.1.0)</text>
       <g class="bar bar-side-quest">
         <text x="391" y="510" class="term track">----------------</text>
         <text x="391" y="510" class="term hash"><tspan class="h" style="opacity:0;animation:appear .01s linear 4.43s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.51s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.58s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.66s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.74s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.82s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.90s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 4.97s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.05s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.13s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.21s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.29s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.37s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.44s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.52s both">#</tspan><tspan class="h" style="opacity:0;animation:appear .01s linear 5.60s both">#</tspan></text>
@@ -239,7 +240,7 @@
         <text x="537" y="510" class="term pct pstep" style="opacity:0;animation:appear 0s linear 5.49s both, vanish 0s linear 5.60s forwards"> 91%</text>
         <text x="537" y="510" class="term pct pct-end pstep" style="opacity:0;animation:appear 0s linear 5.60s both">100%</text>
       </g>
-      <text x="391" y="510" class="term note note-side-quest"># main campaign</text>
+      <text x="391" y="510" class="term note note-side-quest"># optional</text>
     </g>
     <g class="ln ln-thinking-outside-the-box">
       <g class="spin-g spin-thinking-outside-the-box">
@@ -267,14 +268,14 @@
     </g>
     <text x="24" y="562" class="ln ln-sum"><tspan class="beer">🍺  5 installed</tspan></text>
     <text x="24" y="586" class="ln ln-keg"><tspan class="mid">    human is keg-only — macOS already shipped one</tspan></text>
-    <text x="24" y="626" class="ln ln-cat"><tspan class="prompt">$ </tspan><tspan class="cmd">cat alex.ts</tspan></text>
-    <text x="24" y="650" class="ln ln-const"><tspan class="kw">const </tspan><tspan class="var">alex</tspan><tspan class="punc">: </tspan><tspan class="type">Dev</tspan><tspan class="punc"> = {</tspan></text>
+    <text x="24" y="626" class="ln ln-cat"><tspan class="prompt">$ </tspan><tspan class="cmd">cat you.ts</tspan></text>
+    <text x="24" y="650" class="ln ln-const"><tspan class="kw">const </tspan><tspan class="var">your_handle</tspan><tspan class="punc">: </tspan><tspan class="type">Dev</tspan><tspan class="punc"> = {</tspan></text>
     <text x="24" y="674" class="ln ln-f0"><tspan class="key">&#160;&#160;pronouns</tspan><tspan class="punc">: </tspan><tspan class="str">"they/them"</tspan><tspan class="punc">,</tspan></text>
-    <text x="24" y="698" class="ln ln-f1"><tspan class="key">&#160;&#160;role</tspan><tspan class="punc">: </tspan><tspan class="str">"developer"</tspan><tspan class="punc">,</tspan></text>
-    <text x="24" y="722" class="ln ln-f2"><tspan class="key">&#160;&#160;location</tspan><tspan class="punc">: </tspan><tspan class="str">"the internet"</tspan><tspan class="punc">,</tspan></text>
-    <text x="24" y="746" class="ln ln-f3"><tspan class="key">&#160;&#160;code</tspan><tspan class="punc">: [</tspan><tspan class="str">"TypeScript", "Rust", "Python"</tspan><tspan class="punc">],</tspan></text>
-    <text x="24" y="770" class="ln ln-f4"><tspan class="key">&#160;&#160;focus</tspan><tspan class="punc">: </tspan><tspan class="str">"building things that make you grin"</tspan><tspan class="punc">,</tspan></text>
-    <text x="24" y="794" class="ln ln-f5"><tspan class="key">&#160;&#160;learning</tspan><tspan class="punc">: </tspan><tspan class="str">"whatever the next rabbit hole is"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="698" class="ln ln-f1"><tspan class="key">&#160;&#160;role</tspan><tspan class="punc">: </tspan><tspan class="str">"your role"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="722" class="ln ln-f2"><tspan class="key">&#160;&#160;location</tspan><tspan class="punc">: </tspan><tspan class="str">"your city"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="746" class="ln ln-f3"><tspan class="key">&#160;&#160;code</tspan><tspan class="punc">: [</tspan><tspan class="str">"TypeScript", "Python"</tspan><tspan class="punc">],</tspan></text>
+    <text x="24" y="770" class="ln ln-f4"><tspan class="key">&#160;&#160;focus</tspan><tspan class="punc">: </tspan><tspan class="str">"what you like to build"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="794" class="ln ln-f5"><tspan class="key">&#160;&#160;learning</tspan><tspan class="punc">: </tspan><tspan class="str">"what you are learning"</tspan><tspan class="punc">,</tspan></text>
     <text x="24" y="818" class="ln ln-end"><tspan class="punc">};</tspan></text>
   </g>
 

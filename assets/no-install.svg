@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 546" width="860" height="546" role="img" aria-label="Terminal: whoami → your_handle; ./boot.sh; you.ts">
+  <defs>
+    <style>
+    .term { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 14px; }
+    .prompt { fill: #3fb950; }
+    .ps     { fill: #e5c07b; }
+    .cmd    { fill: #c9d1d9; }
+    .user   { fill: #58a6ff; }
+    .ok     { fill: #3fb950; }
+    .mid    { fill: #8b949e; }
+    .val    { fill: #58a6ff; }
+    .ready  { fill: #f0b429; }
+    .kw     { fill: #ff7b72; }
+    .var    { fill: #c9d1d9; }
+    .type   { fill: #ffa657; }
+    .key    { fill: #79c0ff; }
+    .str    { fill: #a5d6ff; }
+    .punc   { fill: #8b949e; }
+    .eq     { fill: #3fb950; }
+    .track  { fill: #484f58; }
+    .hash   { fill: #3fb950; }
+    .pct    { fill: #8b949e; }
+    .pct-end{ fill: #3fb950; }
+    .note   { fill: #6e7681; }
+    .beer   { fill: #c9d1d9; }
+    .spin-g { opacity: 0; }
+    .check  { opacity: 1; }
+    .bar    { opacity: 0; }
+    .ln     { opacity: 1; }
+    .sf     { fill: #58a6ff; opacity: 0; }
+    .s0 { animation: sp0 .48s steps(1) infinite; }
+    .s1 { animation: sp1 .48s steps(1) infinite; }
+    .s2 { animation: sp2 .48s steps(1) infinite; }
+    .s3 { animation: sp3 .48s steps(1) infinite; }
+    @keyframes appear { from { opacity: 0 } to { opacity: 1 } }
+    @keyframes vanish { to { opacity: 0 } }
+    @keyframes blink  { 50% { opacity: 0 } }
+    @keyframes sp0 { 0%,24% { opacity: 1 } 25%,100% { opacity: 0 } }
+    @keyframes sp1 { 0%,24% { opacity: 0 } 25%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
+    @keyframes sp2 { 0%,49% { opacity: 0 } 50%,74% { opacity: 1 } 75%,100% { opacity: 0 } }
+    @keyframes sp3 { 0%,74% { opacity: 0 } 75%,100% { opacity: 1 } }
+    .cursor { fill: #c9d1d9; opacity: 1; animation: appear .1s linear 5.25s both, blink 1.05s step-end 5.35s infinite; }
+
+    .ln-whoami { animation: appear .15s ease 0.15s both; }
+    .ln-user { animation: appear .15s ease 0.50s both; }
+    .ln-boot { animation: appear .15s ease 1.00s both; }
+    .ln-boot-0 { animation: appear .15s ease 1.30s both; }
+    .ln-boot-1 { animation: appear .15s ease 1.60s both; }
+    .ln-boot-2 { animation: appear .15s ease 1.90s both; }
+    .ln-boot-3 { animation: appear .15s ease 2.20s both; }
+    .ln-ready { animation: appear .15s ease 2.50s both; }
+    .ln-cat { animation: appear .15s ease 2.90s both; }
+    .ln-const { animation: appear .15s ease 3.20s both; }
+    .ln-f0 { animation: appear .15s ease 3.45s both; }
+    .ln-f1 { animation: appear .15s ease 3.70s both; }
+    .ln-f2 { animation: appear .15s ease 3.95s both; }
+    .ln-f3 { animation: appear .15s ease 4.20s both; }
+    .ln-f4 { animation: appear .15s ease 4.45s both; }
+    .ln-f5 { animation: appear .15s ease 4.70s both; }
+    .ln-end { animation: appear .15s ease 4.95s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ln, .spin-g, .check, .bar, .note, .cursor, .sf, .h, .pstep { animation: none !important; }
+      .spin-g, .bar { opacity: 0 !important; }
+      .check, .ln, .note { opacity: 1 !important; }
+      .cursor { opacity: 1 !important; }
+    }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="858" height="544" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="1" y1="40" x2="859" y2="40" stroke="#30363d" stroke-width="1"/>
+  <circle cx="24" cy="20.5" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="20.5" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="20.5" r="6" fill="#27c93f"/>
+  <text x="430" y="25" text-anchor="middle" class="term" fill="#6e7681" font-size="13">you@github ~ /profile</text>
+
+  <g class="term" xml:space="preserve">
+    <text x="24" y="72" class="ln ln-whoami"><tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan></text>
+    <text x="24" y="96" class="ln ln-user"><tspan class="user">your_handle</tspan></text>
+    <text x="24" y="144" class="ln ln-boot"><tspan class="prompt">$ </tspan><tspan class="cmd">./boot.sh</tspan></text>
+    <text x="24" y="168" class="ln ln-boot-0"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  POST ............................... </tspan><tspan class="val">passed</tspan></text>
+    <text x="24" y="192" class="ln ln-boot-1"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  mount /dev/you ..................... </tspan><tspan class="val">ready</tspan></text>
+    <text x="24" y="216" class="ln ln-boot-2"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  load stack ......................... </tspan><tspan class="val">done</tspan></text>
+    <text x="24" y="240" class="ln ln-boot-3"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  init tooling ....................... </tspan><tspan class="val">online</tspan></text>
+    <text x="24" y="264" class="ln ln-ready"><tspan class="ok">[ OK ]</tspan><tspan class="mid">  system ready ▸ </tspan><tspan class="ready">welcome!</tspan></text>
+    <text x="24" y="304" class="ln ln-cat"><tspan class="prompt">$ </tspan><tspan class="cmd">cat you.ts</tspan></text>
+    <text x="24" y="328" class="ln ln-const"><tspan class="kw">const </tspan><tspan class="var">your_handle</tspan><tspan class="punc">: </tspan><tspan class="type">Dev</tspan><tspan class="punc"> = {</tspan></text>
+    <text x="24" y="352" class="ln ln-f0"><tspan class="key">&#160;&#160;pronouns</tspan><tspan class="punc">: </tspan><tspan class="str">"they/them"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="376" class="ln ln-f1"><tspan class="key">&#160;&#160;role</tspan><tspan class="punc">: </tspan><tspan class="str">"your role"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="400" class="ln ln-f2"><tspan class="key">&#160;&#160;location</tspan><tspan class="punc">: </tspan><tspan class="str">"your city"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="424" class="ln ln-f3"><tspan class="key">&#160;&#160;code</tspan><tspan class="punc">: [</tspan><tspan class="str">"TypeScript", "Python"</tspan><tspan class="punc">],</tspan></text>
+    <text x="24" y="448" class="ln ln-f4"><tspan class="key">&#160;&#160;focus</tspan><tspan class="punc">: </tspan><tspan class="str">"what you like to build"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="472" class="ln ln-f5"><tspan class="key">&#160;&#160;learning</tspan><tspan class="punc">: </tspan><tspan class="str">"what you are learning"</tspan><tspan class="punc">,</tspan></text>
+    <text x="24" y="496" class="ln ln-end"><tspan class="punc">};</tspan></text>
+  </g>
+
+  <rect class="cursor" x="24" y="528" width="9" height="4"/>
+</svg>
