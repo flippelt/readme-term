@@ -218,6 +218,83 @@ INSTALLERS = {
         "pkg_label": lambda n, v: f"{n} [{v}]",
         "summary": lambda n: f"Successfully installed {n} packages",
     },
+    "npm": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "npm install -g",
+        "cont_char": "\\",
+        "updating": " npm notice",
+        "catalog": "npm notice package.json",
+        "fetch_prefix": " added: ",
+        "pkg_label": lambda n, v: f"{n}@{v}",
+        "summary": lambda n: f"added {n} packages",
+    },
+    "pip": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "pip install",
+        "cont_char": "\\",
+        "updating": " Collecting packages",
+        "catalog": "Looking in indexes: pypi.org",
+        "fetch_prefix": " Collecting ",
+        "pkg_label": lambda n, v: f"Collecting {n}=={v}",
+        "summary": lambda n: f"Successfully installed {n} packages",
+    },
+    "uv": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "uv pip install",
+        "cont_char": "\\",
+        "updating": " Resolved",
+        "catalog": "Resolved in 12ms",
+        "fetch_prefix": " Downloading ",
+        "pkg_label": lambda n, v: f"+ {n}=={v}",
+        "summary": lambda n: f"Installed {n} packages",
+    },
+    "cargo": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "cargo install",
+        "cont_char": "\\",
+        "updating": " Updating crates.io index",
+        "catalog": "Updating crates.io index",
+        "fetch_prefix": " Compiling ",
+        "pkg_label": lambda n, v: f"Compiling {n} v{v}",
+        "summary": lambda n: f"Installed {n} binaries",
+    },
+    "nix": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "nix profile install",
+        "cont_char": "\\",
+        "updating": " evaluating derivation",
+        "catalog": "evaluating flake",
+        "fetch_prefix": " building ",
+        "pkg_label": lambda n, v: f"nixpkgs#{n}-{v}",
+        "summary": lambda n: f"{n} store paths added",
+    },
+    "mise": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "mise use --global",
+        "cont_char": "\\",
+        "updating": " mise ~/.config/mise/config.toml",
+        "catalog": "mise config.toml",
+        "fetch_prefix": " installing ",
+        "pkg_label": lambda n, v: f"{n}@{v}",
+        "summary": lambda n: f"mise installed {n} tools",
+    },
+    "asdf": {
+        "shell": "unix",
+        "whoami_cmd": "whoami",
+        "install_cmd": "asdf install",
+        "cont_char": "\\",
+        "updating": " asdf plugin update --all",
+        "catalog": "asdf plugin",
+        "fetch_prefix": " installing ",
+        "pkg_label": lambda n, v: f"{n} {v}",
+        "summary": lambda n: f"{n} versions installed",
+    },
 }
 
 
@@ -376,7 +453,10 @@ def build(cfg: dict, today: date | None = None) -> str:
         packages_in = []
     else:
         if kind not in INSTALLERS:
-            raise SystemExit(f"unknown install.kind {kind!r} (brew, apt, winget, none)")
+            raise SystemExit(
+                f"unknown install.kind {kind!r} "
+                "(brew, apt, winget, npm, pip, uv, cargo, nix, mise, asdf, none)"
+            )
         installer = INSTALLERS[kind]
         packages_in = list(install_cfg.get("packages") or [])
     shell = str(cfg.get("shell") or (installer or {}).get("shell") or "unix")
