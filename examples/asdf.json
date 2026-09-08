@@ -1,0 +1,98 @@
+{
+  "window": "you@github ~ /profile",
+  "whoami": "your_handle",
+  "boot": {
+    "command": "./boot.sh",
+    "ready": "welcome!",
+    "steps": [
+      {
+        "key": "POST",
+        "value": "passed"
+      },
+      {
+        "key": "mount /dev/you",
+        "value": "ready"
+      },
+      {
+        "key": "load stack",
+        "value": "done"
+      },
+      {
+        "key": "init tooling",
+        "value": "online"
+      }
+    ]
+  },
+  "install": {
+    "kind": "asdf",
+    "keg_only": "human is already installed",
+    "packages": [
+      {
+        "name": "language",
+        "version": "1.0.0",
+        "note": "# pick yours"
+      },
+      {
+        "name": "human",
+        "version": {
+          "type": "age",
+          "birthday": "2000-01-01"
+        },
+        "note": "# finally stable",
+        "effect": "stall",
+        "stall_at": 87
+      },
+      {
+        "name": "curiosity",
+        "version": "0.1.0",
+        "note": "--unbounded",
+        "effect": "bursts"
+      },
+      {
+        "name": "side-quest",
+        "version": "0.1.0",
+        "note": "# optional"
+      },
+      {
+        "name": "thinking-outside-the-box",
+        "version": "0.1.0",
+        "note": "# poured sideways",
+        "effect": "reverse"
+      }
+    ]
+  },
+  "profile": {
+    "file": "you.ts",
+    "ident": "your_handle",
+    "type": "Dev",
+    "fields": [
+      {
+        "key": "pronouns",
+        "value": "they/them"
+      },
+      {
+        "key": "role",
+        "value": "your role"
+      },
+      {
+        "key": "location",
+        "value": "your city"
+      },
+      {
+        "key": "code",
+        "value": [
+          "TypeScript",
+          "Python"
+        ]
+      },
+      {
+        "key": "focus",
+        "value": "what you like to build"
+      },
+      {
+        "key": "learning",
+        "value": "what you are learning"
+      }
+    ]
+  }
+}

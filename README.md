@@ -47,6 +47,13 @@ python3 generate.py
 | [`examples/no-boot.json`](examples/no-boot.json) | brew, no `./boot.sh` |
 | [`examples/linux-apt.json`](examples/linux-apt.json) | `$ sudo apt install` |
 | [`examples/windows-winget.json`](examples/windows-winget.json) | `PS> winget install` + `Get-Content` |
+| [`examples/npm.json`](examples/npm.json) | `$ npm install -g` |
+| [`examples/pip.json`](examples/pip.json) | `$ pip install` |
+| [`examples/uv.json`](examples/uv.json) | `$ uv pip install` |
+| [`examples/cargo.json`](examples/cargo.json) | `$ cargo install` |
+| [`examples/nix.json`](examples/nix.json) | `$ nix profile install` |
+| [`examples/mise.json`](examples/mise.json) | `$ mise use --global` |
+| [`examples/asdf.json`](examples/asdf.json) | `$ asdf install` |
 
 <p align="center">
   <img src="assets/no-install.svg" alt="No package manager" width="720"/>
@@ -64,7 +71,35 @@ python3 generate.py
   <img src="assets/windows-winget.svg" alt="PowerShell winget terminal" width="720"/>
 </p>
 
-`install.kind` can be `brew`, `apt`, `winget`, or `none`. Omit the `boot` object to skip `./boot.sh`. Set `"shell": "powershell"` for `PS>` and `$env:USERNAME`.
+<p align="center">
+  <img src="assets/npm.svg" alt="npm terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/pip.svg" alt="pip terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/uv.svg" alt="uv terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/cargo.svg" alt="cargo terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/nix.svg" alt="nix terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/mise.svg" alt="mise terminal" width="720"/>
+</p>
+
+<p align="center">
+  <img src="assets/asdf.svg" alt="asdf terminal" width="720"/>
+</p>
+
+`install.kind` can be `brew`, `apt`, `winget`, `npm`, `pip`, `uv`, `cargo`, `nix`, `mise`, `asdf`, or `none`. Omit the `boot` object to skip `./boot.sh`. Set `"shell": "powershell"` for `PS>` and `$env:USERNAME`.
 
 ## Cron (GitHub Actions)
 
@@ -109,7 +144,7 @@ Delete `.github/workflows/generate.yml` and generate only on your machine with `
 | `window` | Title in the traffic-light bar (`you@github ~ /profile`) |
 | `whoami` | Output of `$ whoami` |
 | `boot` | `./boot.sh` steps (`key` / `value`) and the gold `ready` line |
-| `install.kind` | `brew`, `apt`, `winget`, or `none` |
+| `install.kind` | `brew`, `apt`, `winget`, `npm`, `pip`, `uv`, `cargo`, `nix`, `mise`, `asdf`, or `none` |
 | `install.packages` | Formulae: `name`, `version`, optional `note` |
 | `install.keg_only` | Grey footnote under the summary (omit the key to hide it) |
 | `shell` | `unix` (default) or `powershell` |
