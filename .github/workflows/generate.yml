@@ -16,7 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # Optional write deploy key: this origin's ruleset-protected main
+      # rejects GITHUB_TOKEN pushes. Template copies leave the secret unset.
       - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       - name: Render assets/boot.svg
         run: python3 generate.py --examples
       - name: Commit if it changed

@@ -137,6 +137,12 @@ Daily is the right default if you use `type: age` or `type: anniversary` version
 
 Delete `.github/workflows/generate.yml` and generate only on your machine with `python3 generate.py`.
 
+### Protected `main` (this template origin only)
+
+Copies of the template do **not** inherit branch protection. `GITHUB_TOKEN` is enough.
+
+This origin repo's `main` is protected. If you add a similar ruleset on your copy, the daily job cannot push with `GITHUB_TOKEN`. Create a write deploy key, store the private key as the Actions secret `ACTIONS_DEPLOY_KEY`, and add **Deploy keys** to the ruleset bypass list. The workflow already reads that secret; if it is missing, checkout falls back to `GITHUB_TOKEN`.
+
 ## `config.json`
 
 | Block | What to change |
